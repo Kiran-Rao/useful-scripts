@@ -44,6 +44,12 @@ update_microsoft() {
     open -a "Microsoft AutoUpdate"
 }
 
+# Datagrup 
+update_datagrip() {
+    open -a "DataGrip"
+    osascript -e 'tell application "DataGrip" to activate' \
+              -e 'tell application "System Events" to tell process "DataGrip" to click menu item "Check for Updates…" of menu "DataGrip" of menu bar 1'
+}
 
 update_homebrew() {
     brew update 
@@ -63,5 +69,6 @@ update_vlc
 update_microsoft
 update_app_store
 update_spotify
+update_datagrip
 update_homebrew
 update_omz
